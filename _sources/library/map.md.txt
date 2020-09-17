@@ -1,0 +1,10 @@
+
+## map -- 提供基本 HashMap 操作
+
+map模块用于*(暂时)*填补AIL语言不支持map数据类型的空缺。
+
+#### map.map() -> hash_map
+
+该函数可以返回一个空的`hash_map`对象
+
+#### hash_map.set(k, v)
