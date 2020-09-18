@@ -36,7 +36,9 @@
 
     
     <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="搜索" href="../search.html" /> 
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="map – 提供基本 HashMap 操作" href="map.html" />
+    <link rel="prev" title="AIL 标准库参考" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,9 +84,20 @@
             
             
               <p class="caption"><span class="caption-text">目录</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">标准库参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">标准库参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">builtins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-abs-x-number-number">builtins.abs(x: number) -&gt; number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-ng-x-number-number">builtins.ng(x: number) -&gt; number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-int-input-prompt-string-integer">builtins.int_input(prompt: string) -&gt; integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-chr-x-integer-string">builtins.chr(x: integer) -&gt; string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-ord-x-string-integer">builtins.ord(x: string) -&gt; integer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">map</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -130,6 +143,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">AIL 标准库参考</a> &raquo;</li>
         
       <li>builtins – 内建模块</li>
     
@@ -205,8 +220,8 @@
 </div>
 <div class="section" id="builtins-ord-x-string-integer">
 <h2>builtins.ord(x: string) -&gt; integer<a class="headerlink" href="#builtins-ord-x-string-integer" title="永久链接至标题">¶</a></h2>
-<p>返回 <strong>单字符字符串串</strong> <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>Unicode Point</strong> 。若x不符合要求，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code>
-<strong>x 必须是单字符字符串，即len(x) == 1</strong></p>
+<p>返回 <strong>单字符字符串串</strong> <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>Unicode Point</strong> 。若x不符合要求，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code> 。</p>
+<p><strong>x 必须是单字符字符串，即len(x) == 1</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
 <span class="o">&lt;</span> <span class="mi">78</span> <span class="o">&gt;</span>
 <span class="o">&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;NZ&#39;</span><span class="p">)</span>
@@ -222,6 +237,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="map.html" class="btn btn-neutral float-right" title="map – 提供基本 HashMap 操作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="AIL 标准库参考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
