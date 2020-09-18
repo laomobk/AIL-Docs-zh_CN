@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>builtins – 内建模块 &mdash; AIL-docs  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AIL-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">标准库参考</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AIL-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>builtins – 内建模块</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/library/builtins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="builtins">
+<h1>builtins – 内建模块<a class="headerlink" href="#builtins" title="永久链接至标题">¶</a></h1>
+<p><em>(构建中…)</em></p>
+<p>builtins是AIL运行时启动后自动加载的 <strong>“模块”</strong> ，提供了一些基本的操作。
+<strong>注意: builtins模块实现abuiltins.py并不被设计成为AIL的扩展模块</strong></p>
+<p><em>builtins实现可以查看源码: ail/core/abuiltins.py</em></p>
+<div class="section" id="builtins-abs-x-number-number">
+<h2>builtins.abs(x: number) -&gt; number<a class="headerlink" href="#builtins-abs-x-number-number" title="永久链接至标题">¶</a></h2>
+<p>提供了取绝对值操作。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">726</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">726</span> <span class="o">&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">726</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="builtins-ng-x-number-number">
+<h2>builtins.ng(x: number) -&gt; number<a class="headerlink" href="#builtins-ng-x-number-number" title="永久链接至标题">¶</a></h2>
+<p>提供了将正数取反的操作。</p>
+<p><em>最早的AIL并不支持表示负数，需要使用这个函数取负数</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">ng</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">726</span> <span class="o">&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="n">ng</span><span class="p">(</span><span class="o">-</span><span class="mi">726</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="o">-</span><span class="mi">726</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="builtins-int-input-prompt-string-integer">
+<h2>builtins.int_input(prompt: string) -&gt; integer<a class="headerlink" href="#builtins-int-input-prompt-string-integer" title="永久链接至标题">¶</a></h2>
+<p>提供了整数输入操作，若接受了一个非数字输入，则抛出 <code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">int_input</span><span class="p">(</span><span class="s1">&#39;What is your score: &#39;</span><span class="p">)</span>
+<span class="n">What</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">score</span><span class="p">:</span> <span class="mi">150</span>
+<span class="o">&lt;</span> <span class="mi">150</span> <span class="o">&gt;</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">int_input</span><span class="p">(</span><span class="s1">&#39;What is your score: &#39;</span><span class="p">)</span>
+<span class="n">What</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">score</span><span class="p">:</span> <span class="n">A</span><span class="o">+</span>
+<span class="ow">in</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span> <span class="o">+</span> <span class="mi">4</span> <span class="p">:</span>
+    <span class="ne">ValueError</span> <span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;A+&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="builtins-chr-x-integer-string">
+<h2>builtins.chr(x: integer) -&gt; string<a class="headerlink" href="#builtins-chr-x-integer-string" title="永久链接至标题">¶</a></h2>
+<p>返回一个Unicode字符，值介于 [0, 0x10FFFF]，若超出该范围，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">51</span><span class="p">)</span>
+<span class="s1">&#39;3&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="o">-</span><span class="mi">51</span><span class="p">)</span>
+<span class="ow">in</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span> <span class="o">+</span> <span class="mi">4</span> <span class="p">:</span>
+    <span class="n">PythonError</span> <span class="p">:</span> <span class="nb">chr</span><span class="p">()</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x110000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>将在未来版本修改为 UnicodeError</em></p>
+</div>
+<div class="section" id="builtins-ord-x-string-integer">
+<h2>builtins.ord(x: string) -&gt; integer<a class="headerlink" href="#builtins-ord-x-string-integer" title="永久链接至标题">¶</a></h2>
+<p>返回 <strong>单字符字符串串</strong> <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>Unicode Point</strong> 。若x不符合要求，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code>
+<strong>x 必须是单字符字符串，即len(x) == 1</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">78</span> <span class="o">&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;NZ&#39;</span><span class="p">)</span>
+<span class="ow">in</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span> <span class="o">+</span> <span class="mi">4</span> <span class="p">:</span>
+    <span class="n">PythonError</span> <span class="p">:</span> <span class="nb">ord</span><span class="p">()</span> <span class="n">expected</span> <span class="n">a</span> <span class="n">character</span><span class="p">,</span> <span class="n">but</span> <span class="n">string</span> <span class="n">of</span> <span class="n">length</span> <span class="mi">2</span> <span class="n">found</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, ChenHongbo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
