@@ -88,11 +88,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">入门教程</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">标准库参考</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">builtins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#var-null">var null</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#var-true">var true</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#var-false">var false</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#var-version">var __version__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#var-main-version">var __main_version__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-abs-x-number-number">builtins.abs(x: number) -&gt; number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-ng-x-number-number">builtins.ng(x: number) -&gt; number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-int-input-prompt-string-integer">builtins.int_input(prompt: string) -&gt; integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-chr-x-integer-string">builtins.chr(x: integer) -&gt; string</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-ord-x-string-integer">builtins.ord(x: string) -&gt; integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-hex-x-integer-string">builtins.hex(x: integer) -&gt; string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-new-type-struct-type-default-list-object">builtins.new(type: struct_type, default_list={}) -&gt; object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-len-x-longish-integer">builtins.len(x: longish) -&gt; integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-equal-a-any-b-any-boolean">builtins.equal(a: any, b: any) -&gt; boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-equal-type-a-any-b-any-boolean">builtins.equal_type(a: any, b: any) -&gt; boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-array-size-integer-array">builtins.array(size: integer) -&gt; array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-isinstance-obj-any-type-struct-type-boolean">builtins.isinstance(obj: any, type: struct_type) -&gt; boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-str-x-any-string">builtins.str(x: any) -&gt; string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-int-x-number-integer">builtins.int(x: number) -&gt; integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-repr-x-any-string">builtins.repr(x: any) -&gt; string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-open-fp-string-mode-string-fileio">builtins.open(fp: string, mode: string) -&gt; FileIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-addr-obj-any-integer">builtins.addr(obj: any) -&gt; integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-get-ccom-ccom-t">builtins._get_ccom() -&gt; CCOM_T</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-fnum-num-number-fast-number">builtins.fnum(num: number) -&gt; fast_number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-type-obj-any-integer">builtins.type(obj: any) -&gt; integer</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="map.html">map</a></li>
@@ -171,6 +191,21 @@
 <p>builtins是AIL运行时启动后自动加载的 <strong>“模块”</strong> ，提供了一些基本的操作。
 <strong>注意: builtins模块实现abuiltins.py并不被设计成为AIL的扩展模块</strong></p>
 <p><em>builtins实现可以查看源码: ail/core/abuiltins.py</em></p>
+<div class="section" id="var-null">
+<h2>var null<a class="headerlink" href="#var-null" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="var-true">
+<h2>var true<a class="headerlink" href="#var-true" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="var-false">
+<h2>var false<a class="headerlink" href="#var-false" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="var-version">
+<h2>var __version__<a class="headerlink" href="#var-version" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="var-main-version">
+<h2>var __main_version__<a class="headerlink" href="#var-main-version" title="永久链接至标题">¶</a></h2>
+</div>
 <div class="section" id="builtins-abs-x-number-number">
 <h2>builtins.abs(x: number) -&gt; number<a class="headerlink" href="#builtins-abs-x-number-number" title="永久链接至标题">¶</a></h2>
 <p>提供了取绝对值操作。</p>
@@ -220,7 +255,7 @@
 </div>
 <div class="section" id="builtins-ord-x-string-integer">
 <h2>builtins.ord(x: string) -&gt; integer<a class="headerlink" href="#builtins-ord-x-string-integer" title="永久链接至标题">¶</a></h2>
-<p>返回 <strong>单字符字符串串</strong> <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>Unicode Point</strong> 。若x不符合要求，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code> 。</p>
+<p>返回 <strong>单字符字符串</strong> <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>Unicode Point</strong> 。若x不符合要求，则抛出 <code class="code docutils literal notranslate"><span class="pre">PythonError</span></code> 。</p>
 <p><strong>x 必须是单字符字符串，即len(x) == 1</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
 <span class="o">&lt;</span> <span class="mi">78</span> <span class="o">&gt;</span>
@@ -229,6 +264,51 @@
     <span class="n">PythonError</span> <span class="p">:</span> <span class="nb">ord</span><span class="p">()</span> <span class="n">expected</span> <span class="n">a</span> <span class="n">character</span><span class="p">,</span> <span class="n">but</span> <span class="n">string</span> <span class="n">of</span> <span class="n">length</span> <span class="mi">2</span> <span class="n">found</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="builtins-hex-x-integer-string">
+<h2>builtins.hex(x: integer) -&gt; string<a class="headerlink" href="#builtins-hex-x-integer-string" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-new-type-struct-type-default-list-object">
+<h2>builtins.new(type: struct_type, default_list={}) -&gt; object<a class="headerlink" href="#builtins-new-type-struct-type-default-list-object" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-len-x-longish-integer">
+<h2>builtins.len(x: longish) -&gt; integer<a class="headerlink" href="#builtins-len-x-longish-integer" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-equal-a-any-b-any-boolean">
+<h2>builtins.equal(a: any, b: any) -&gt; boolean<a class="headerlink" href="#builtins-equal-a-any-b-any-boolean" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-equal-type-a-any-b-any-boolean">
+<h2>builtins.equal_type(a: any, b: any) -&gt; boolean<a class="headerlink" href="#builtins-equal-type-a-any-b-any-boolean" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-array-size-integer-array">
+<h2>builtins.array(size: integer) -&gt; array<a class="headerlink" href="#builtins-array-size-integer-array" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-isinstance-obj-any-type-struct-type-boolean">
+<h2>builtins.isinstance(obj: any, type: struct_type) -&gt; boolean<a class="headerlink" href="#builtins-isinstance-obj-any-type-struct-type-boolean" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-str-x-any-string">
+<h2>builtins.str(x: any) -&gt; string<a class="headerlink" href="#builtins-str-x-any-string" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-int-x-number-integer">
+<h2>builtins.int(x: number) -&gt; integer<a class="headerlink" href="#builtins-int-x-number-integer" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-repr-x-any-string">
+<h2>builtins.repr(x: any) -&gt; string<a class="headerlink" href="#builtins-repr-x-any-string" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-open-fp-string-mode-string-fileio">
+<h2>builtins.open(fp: string, mode: string) -&gt; FileIO<a class="headerlink" href="#builtins-open-fp-string-mode-string-fileio" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-addr-obj-any-integer">
+<h2>builtins.addr(obj: any) -&gt; integer<a class="headerlink" href="#builtins-addr-obj-any-integer" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-get-ccom-ccom-t">
+<h2>builtins._get_ccom() -&gt; CCOM_T<a class="headerlink" href="#builtins-get-ccom-ccom-t" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-fnum-num-number-fast-number">
+<h2>builtins.fnum(num: number) -&gt; fast_number<a class="headerlink" href="#builtins-fnum-num-number-fast-number" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-type-obj-any-integer">
+<h2>builtins.type(obj: any) -&gt; integer<a class="headerlink" href="#builtins-type-obj-any-integer" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 

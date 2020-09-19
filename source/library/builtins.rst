@@ -4,9 +4,71 @@ builtins -- 内建模块
 *(构建中...)*
 
 builtins是AIL运行时启动后自动加载的 **"模块"** ，提供了一些基本的操作。
+
 **注意: builtins模块实现abuiltins.py并不被设计成为AIL的扩展模块**
 
 *builtins实现可以查看源码: ail/core/abuiltins.py*
+
+
+type string
+###########
+
+
+type number
+###########
+
+
+type integer
+############
+
+
+type float
+##########
+
+
+type CCOM_T
+###########
+
+
+type FileIO
+###########
+
+
+type fast_number
+################
+
+
+type struct_type
+################
+
+
+type object
+###########
+
+
+type any
+########
+
+
+var null
+########
+
+
+var true
+########
+
+
+var false
+#########
+
+
+var __version__
+###############
+
+
+var __main_version__
+####################
+
 
 builtins.abs(x: number) -> number
 #################################
@@ -72,7 +134,7 @@ builtins.chr(x: integer) -> string
 builtins.ord(x: string) -> integer
 ##################################
 
-返回 **单字符字符串串** :code:`x` 的 **Unicode Point** 。若x不符合要求，则抛出 :code:`PythonError` 。
+返回 **单字符字符串** :code:`x` 的 **Unicode Point** 。若x不符合要求，则抛出 :code:`PythonError` 。
 
 **x 必须是单字符字符串，即len(x) == 1**
 
@@ -83,5 +145,65 @@ builtins.ord(x: string) -> integer
     >> ord('NZ')
     in '<shell>' + 4 :
         PythonError : ord() expected a character, but string of length 2 found
+
+
+builtins.hex(x: integer) -> string
+##################################
+
+
+builtins.new(type: struct_type, default_list={}) -> object
+#################################################################
+
+
+builtins.len(x: longish) -> integer
+###################################
+
+
+builtins.equal(a: any, b: any) -> boolean
+#########################################
+
+
+builtins.equal_type(a: any, b: any) -> boolean
+##############################################
+
+
+builtins.array(size: integer) -> array
+######################################
+
+
+builtins.isinstance(obj: any, type: struct_type) -> boolean
+##############################################################
+
+
+builtins.str(x: any) -> string
+##############################
+
+
+builtins.int(x: number) -> integer
+##################################
+
+
+builtins.repr(x: any) -> string
+###############################
+
+
+builtins.open(fp: string, mode: string) -> FileIO
+#################################################
+
+
+builtins.addr(obj: any) -> integer
+##################################
+
+
+builtins._get_ccom() -> CCOM_T
+##############################
+
+
+builtins.fnum(num: number) -> fast_number
+#########################################
+
+
+builtins.type(obj: any) -> integer
+##################################
 
 
