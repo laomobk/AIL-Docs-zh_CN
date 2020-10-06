@@ -83,6 +83,7 @@
             
               <p class="caption"><span class="caption-text">目录</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew/index.html">版本介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">入门教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="library/index.html">标准库参考</a></li>
 </ul>
@@ -153,14 +154,57 @@
   <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">AIL 文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew/index.html">版本介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatsnew/1_2.html">1.2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="whatsnew/1_2.html#id1">新增：闭包的支持</a></li>
+<li class="toctree-l4"><a class="reference internal" href="whatsnew/1_2.html#id2">新增：方法绑定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="whatsnew/1_2.html#elif">新增：elif 语句</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/index.html">入门教程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="library/index.html">标准库参考</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="library/builtins.html">builtins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-string">type string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-integer">type integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-float">type float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-array">type array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-ccom-t">type CCOM_T</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-iobuffer-t">type iobuffer_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-longish">type longish</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-fast-number">type fast_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-struct-type">type struct_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-object">type object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-any">type any</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-null">type null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#type-bool">type bool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#union-number">union number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#var-null-null">var null: null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#var-true-bool">var true: bool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#var-false-bool">var false: bool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#var-version-string">var __version__: string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#var-main-version-integer">var __main_version__: integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-abs-x-number-number">builtins.abs(x: number) -&gt; number</a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-ng-x-number-number">builtins.ng(x: number) -&gt; number</a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-int-input-prompt-string-integer">builtins.int_input(prompt: string) -&gt; integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-chr-x-integer-string">builtins.chr(x: integer) -&gt; string</a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-ord-x-string-integer">builtins.ord(x: string) -&gt; integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-hex-x-integer-string">builtins.hex(x: integer) -&gt; string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-new-type-struct-type-default-list-array-object">builtins.new(type: struct_type, default_list: array={}) -&gt; object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-len-x-longish-integer">builtins.len(x: longish) -&gt; integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-equal-a-any-b-any-boolean">builtins.equal(a: any, b: any) -&gt; boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-equal-type-a-any-b-any-boolean">builtins.equal_type(a: any, b: any) -&gt; boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-array-size-integer-array">builtins.array(size: integer) -&gt; array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-isinstance-obj-any-type-struct-type-boolean">builtins.isinstance(obj: any, type: struct_type) -&gt; boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-str-x-any-string">builtins.str(x: any) -&gt; string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-int-x-number-integer">builtins.int(x: number) -&gt; integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-repr-x-any-string">builtins.repr(x: any) -&gt; string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-open-fp-string-mode-string-iobuffer-t">builtins.open(fp: string, mode: string) -&gt; iobuffer_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-addr-obj-any-integer">builtins.addr(obj: any) -&gt; integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-get-ccom-ccom-t">builtins._get_ccom() -&gt; CCOM_T</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-fnum-num-number-fast-number">builtins.fnum(num: number) -&gt; fast_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/builtins.html#builtins-type-obj-any-integer">builtins.type(obj: any) -&gt; integer</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library/map.html">map</a><ul>

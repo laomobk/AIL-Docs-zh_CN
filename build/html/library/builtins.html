@@ -85,6 +85,7 @@
             
               <p class="caption"><span class="caption-text">目录</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew/index.html">版本介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">入门教程</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">标准库参考</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">builtins</a><ul>
@@ -113,7 +114,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#builtins-chr-x-integer-string">builtins.chr(x: integer) -&gt; string</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-ord-x-string-integer">builtins.ord(x: string) -&gt; integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-hex-x-integer-string">builtins.hex(x: integer) -&gt; string</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#builtins-new-type-struct-type-default-list-object">builtins.new(type: struct_type, default_list={}) -&gt; object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtins-new-type-struct-type-default-list-array-object">builtins.new(type: struct_type, default_list: array={}) -&gt; object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-len-x-longish-integer">builtins.len(x: longish) -&gt; integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-equal-a-any-b-any-boolean">builtins.equal(a: any, b: any) -&gt; boolean</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builtins-equal-type-a-any-b-any-boolean">builtins.equal_type(a: any, b: any) -&gt; boolean</a></li>
@@ -413,36 +414,127 @@ fast_number 之间的运算相比普通的数字类型运算，效率会高很�
 </div>
 <div class="section" id="builtins-hex-x-integer-string">
 <h2>builtins.hex(x: integer) -&gt; string<a class="headerlink" href="#builtins-hex-x-integer-string" title="永久链接至标题">¶</a></h2>
+<p>返回以’0x’开头的 x 的十六进制形式。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="s1">&#39;0x2d6&#39;</span>
+</pre></div>
 </div>
-<div class="section" id="builtins-new-type-struct-type-default-list-object">
-<h2>builtins.new(type: struct_type, default_list={}) -&gt; object<a class="headerlink" href="#builtins-new-type-struct-type-default-list-object" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="builtins-new-type-struct-type-default-list-array-object">
+<h2>builtins.new(type: struct_type, default_list: array={}) -&gt; object<a class="headerlink" href="#builtins-new-type-struct-type-default-list-array-object" title="永久链接至标题">¶</a></h2>
+<p>实例化 struct 类型，返回 struct 对象。</p>
+<p><code class="code docutils literal notranslate"><span class="pre">default_list</span></code> 是 <em>可选</em> 的。若不提供 <code class="code docutils literal notranslate"><span class="pre">default_list</span></code> ，则返回的对象的所有属性都为 <strong>null</strong> 若提供 <code class="code docutils literal notranslate"><span class="pre">default_list</span></code> ，则会 <strong>按照struct_type属性的顺序</strong>  依次初始化。</p>
+<p>** default_list 的长度必须等于 struct_type 成员的数量！ **</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">struct</span> <span class="n">Person</span> <span class="ow">is</span>
+<span class="o">..</span>      <span class="n">name</span>
+<span class="o">..</span>      <span class="n">age</span>
+<span class="o">..</span> <span class="n">end</span>
+<span class="o">&gt;&gt;</span> <span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">struct</span> <span class="s1">&#39;Person&#39;</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x339e520</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="p">:</span> <span class="n">null</span>
+        <span class="n">age</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+<span class="o">&gt;&gt;</span> <span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Nezha&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
+<span class="o">&lt;</span><span class="n">struct</span> <span class="s1">&#39;Person&#39;</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x339e0a0</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="p">:</span> <span class="s1">&#39;Nezha&#39;</span>
+        <span class="n">age</span> <span class="p">:</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&gt;</span>
+<span class="p">}</span>
+<span class="o">&gt;&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Nezha&#39;</span><span class="p">})</span>
+<span class="ow">in</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span> <span class="o">+</span> <span class="mi">8</span> <span class="p">:</span>
+        <span class="ne">TypeError</span> <span class="p">:</span> <span class="n">struct</span> <span class="s1">&#39;Person&#39;</span> <span class="n">initialize</span> <span class="n">missing</span> <span class="mi">2</span> <span class="n">required</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Nezha&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">80</span><span class="p">})</span>
+<span class="ow">in</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span> <span class="o">+</span> <span class="mi">12</span> <span class="p">:</span>
+        <span class="ne">TypeError</span> <span class="p">:</span> <span class="n">struct</span> <span class="s1">&#39;Person&#39;</span> <span class="n">initialize</span> <span class="n">takes</span> <span class="mi">2</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">but</span> <span class="mi">3</span> <span class="n">were</span> <span class="n">given</span>
+<span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-len-x-longish-integer">
 <h2>builtins.len(x: longish) -&gt; integer<a class="headerlink" href="#builtins-len-x-longish-integer" title="永久链接至标题">¶</a></h2>
+<p>返回 longish对象 x 的长度。</p>
 </div>
 <div class="section" id="builtins-equal-a-any-b-any-boolean">
 <h2>builtins.equal(a: any, b: any) -&gt; boolean<a class="headerlink" href="#builtins-equal-a-any-b-any-boolean" title="永久链接至标题">¶</a></h2>
+<p>比较x, y是否相等。<strong>比较的对象是两者的地址</strong>。</p>
+<p>但是对于 string, integer 可以直接比较其内容 <em>(float 不可以)</em>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">equal</span><span class="p">(</span><span class="s1">&#39;Nezha&#39;</span><span class="p">,</span> <span class="s1">&#39;NEZHA&#39;</span><span class="p">)</span>
+<span class="n">false</span>
+<span class="o">&gt;&gt;</span> <span class="n">equal</span><span class="p">(</span><span class="s1">&#39;Nezha&#39;</span><span class="p">,</span> <span class="s1">&#39;Nezha&#39;</span><span class="p">)</span>
+<span class="n">true</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-equal-type-a-any-b-any-boolean">
 <h2>builtins.equal_type(a: any, b: any) -&gt; boolean<a class="headerlink" href="#builtins-equal-type-a-any-b-any-boolean" title="永久链接至标题">¶</a></h2>
+<p>比较x, y的类型。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">equal_type</span><span class="p">(</span><span class="mi">726</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">true</span>
+<span class="o">&gt;&gt;</span> <span class="n">equal_type</span><span class="p">({</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
+<span class="n">true</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-array-size-integer-array">
 <h2>builtins.array(size: integer) -&gt; array<a class="headerlink" href="#builtins-array-size-integer-array" title="永久链接至标题">¶</a></h2>
+<p>返回一个长度为 <strong>size</strong> 的数组。其内容被初始化为 <strong>null</strong> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">{</span><span class="n">null</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="n">null</span><span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-isinstance-obj-any-type-struct-type-boolean">
 <h2>builtins.isinstance(obj: any, type: struct_type) -&gt; boolean<a class="headerlink" href="#builtins-isinstance-obj-any-type-struct-type-boolean" title="永久链接至标题">¶</a></h2>
+<p>返回 <code class="code docutils literal notranslate"><span class="pre">obj</span></code> 是否是 <code class="code docutils literal notranslate"><span class="pre">type</span></code> 类型的对象， <strong>一般用于 struct 类型和对象的比较</strong>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">),</span> <span class="n">Person</span><span class="p">)</span>
+<span class="n">true</span>
+<span class="o">&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Person</span><span class="p">)</span>
+<span class="n">false</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-str-x-any-string">
 <h2>builtins.str(x: any) -&gt; string<a class="headerlink" href="#builtins-str-x-any-string" title="永久链接至标题">¶</a></h2>
+<p>返回 <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>字符串形式</strong> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="s1">&#39;726&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">str</span><span class="p">({</span><span class="mi">726</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
+<span class="s1">&#39;{&lt; 726 &gt;, &lt; 3 &gt;}&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="n">new</span><span class="p">(</span><span class="n">Person</span><span class="p">))</span>
+<span class="s1">&#39;&lt;struct &#39;</span><span class="n">Person</span><span class="s1">&#39; object at 0x33aba00&gt; -&gt; {</span>
+        <span class="n">name</span> <span class="p">:</span> <span class="n">null</span>
+        <span class="n">age</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="n">Person</span><span class="p">)</span>
+<span class="s1">&#39;&lt;struct &#39;</span><span class="n">Person</span><span class="s1">&#39; at 0x3393b20&gt;&#39;</span>
+<span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-int-x-number-integer">
 <h2>builtins.int(x: number) -&gt; integer<a class="headerlink" href="#builtins-int-x-number-integer" title="永久链接至标题">¶</a></h2>
+<p>将 x 转换成整数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-repr-x-any-string">
 <h2>builtins.repr(x: any) -&gt; string<a class="headerlink" href="#builtins-repr-x-any-string" title="永久链接至标题">¶</a></h2>
+<p>返回 <code class="code docutils literal notranslate"><span class="pre">x</span></code> 的 <strong>描述(repr)</strong> 形式。repr形式一般被在REPL环境中输出， <strong>请留意与 str(…) 的区别</strong> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">repr</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="s1">&#39;&lt; 726 &gt;&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">726</span><span class="p">)</span>
+<span class="s1">&#39;726&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="builtins-open-fp-string-mode-string-iobuffer-t">
 <h2>builtins.open(fp: string, mode: string) -&gt; iobuffer_t<a class="headerlink" href="#builtins-open-fp-string-mode-string-iobuffer-t" title="永久链接至标题">¶</a></h2>
+<p>打开一个文件，根据 <code class="code docutils literal notranslate"><span class="pre">mode</span></code> 返回一个相对应模式的IO对象。</p>
 </div>
 <div class="section" id="builtins-addr-obj-any-integer">
 <h2>builtins.addr(obj: any) -&gt; integer<a class="headerlink" href="#builtins-addr-obj-any-integer" title="永久链接至标题">¶</a></h2>
