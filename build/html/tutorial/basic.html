@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. 将AIL用于计算 &mdash; AIL-docs  文档</title>
+  <title>2. 将AIL用于计算 &mdash; AIL-docs  文档</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="AIL 标准库参考" href="../library/index.html" />
-    <link rel="prev" title="AIL 教程" href="index.html" /> 
+    <link rel="next" title="3. 存储和使用变量" href="variable.html" />
+    <link rel="prev" title="1. 搭建AIL运行环境" href="setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,16 +87,22 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew/index.html">版本介绍</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">入门教程</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 将AIL用于计算</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">1.1. 数字</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">1.2. 运算</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">1.3. 字符串</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">1.4. 小结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">1. 搭建AIL运行环境</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 将AIL用于计算</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. 数字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2. 运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. 字符串</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. 小结</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="variable.html">3. 存储和使用变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html">4. 基本AIL程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicstmt.html">5. 基本输入输出语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html">6. 基本流程控制语句</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../library/index.html">标准库参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">语言参考</a></li>
 </ul>
 
             
@@ -145,7 +151,7 @@
         
           <li><a href="index.html">AIL 教程</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>将AIL用于计算</li>
+      <li><span class="section-number">2. </span>将AIL用于计算</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,9 +171,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ail">
-<h1><span class="section-number">1. </span>将AIL用于计算<a class="headerlink" href="#ail" title="永久链接至标题">¶</a></h1>
+<h1><span class="section-number">2. </span>将AIL用于计算<a class="headerlink" href="#ail" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2><span class="section-number">1.1. </span>数字<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">2.1. </span>数字<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>在AIL中，数字分为 <strong>浮点数</strong> 和 <strong>整数</strong> ，对于整数，只要内存允许，则其最大值可以很大…很大…。但对于浮点数，只能使用64位浮点数。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="mi">3</span>
 <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&gt;</span>
@@ -192,7 +198,7 @@
 <p><em>需要注意的是，当表示二进制时，0b后的数字串不符合 0 or 1 的规定，则该数字被判断为无效，最终该数字的值就会是 -1。</em></p>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">1.2. </span>运算<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">2.2. </span>运算<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>像计算器一样，AIL也支持简单的运算符，如 <code class="code docutils literal notranslate"><span class="pre">+</span></code>, <code class="code docutils literal notranslate"><span class="pre">-</span></code>, <code class="code docutils literal notranslate"><span class="pre">*</span></code>, <code class="code docutils literal notranslate"><span class="pre">/</span></code> 这类四则运算。通常使用它们不必担心过多的问题。但值得注意的是， <strong>除法的运算结果，通常都是浮点数，无论参与计算的两者的类型是浮点数还是整数。</strong> 。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&gt;</span>
@@ -220,7 +226,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">1.3. </span>字符串<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">2.3. </span>字符串<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>除了操作数字，AIL也可以操作字符串。但相对于数字运算，字符串操作就没这么多样了。</p>
 <p>要表示一个字符串，必须使用 <code class="code docutils literal notranslate"><span class="pre">'</span></code> 或者 <code class="code docutils literal notranslate"><span class="pre">&quot;</span></code> 阔起。AIL不允许两者混用：即开头是 <code class="code docutils literal notranslate"><span class="pre">&quot;</span></code> ，但却以 <code class="code docutils literal notranslate"><span class="pre">'</span></code> 结尾，或者反过来。这是不允许的（也是不恰当的）。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="s2">&quot;nezha&quot;</span>
@@ -233,7 +239,7 @@
 <span class="n">Error</span><span class="p">:</span> <span class="n">EOL</span> <span class="k">while</span> <span class="n">scanning</span> <span class="n">string</span> <span class="n">literal</span>
 </pre></div>
 </div>
-<p>AIL为字符串只提供了一种运算：加法。字符串加法规定，两者相加，类型只能是数字或字符串。</p>
+<p>AIL为字符串只提供了一种普通运算：加法。字符串加法规定，两者相加，类型只能是数字或字符串。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="s1">&#39;nezha&#39;</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="s1">&#39;aobing&#39;</span>
 <span class="s1">&#39;nezha and aobing&#39;</span>
 <span class="o">&gt;&gt;</span> <span class="s1">&#39;nezha is &#39;</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39; years old&#39;</span>
@@ -256,9 +262,26 @@ It is AIL!
 */
 </pre></div>
 </div>
+<p>接下来，我们试试别的更高级的操作。AIL为字符串提供了一种额外操作，下标索引。顾名思义，可以像索引C语言中的字符串(const char*)一样，索引AIL字符串， <strong>且不需要担心越界问题</strong> 。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="s1">&#39;Nezha&#39;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;N&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;Nezha&#39;</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s1">&#39;&lt;shell&gt;&#39;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span> <span class="mi">5</span><span class="p">,</span> <span class="n">index</span> <span class="mi">6</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;哪吒&#39;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;吒&#39;</span>
+</pre></div>
+</div>
+<p>若需要获取字符串长度，可以使用内置的 <code class="code docutils literal notranslate"><span class="pre">len</span></code> 函数，关于AIL的函数部分，后面的章节会有详细介绍。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;哪吒&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span> <span class="mi">2</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>AIL默认以UTF-8的编码来读取源码，在进行字符串下标索引或者进行 len(…) 操作时，不需要担心编码和字符宽度的问题。在使用UTF-8的AIL里，一个“字”，就是一个字符（只要能够通过编码）。</em></p>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">1.4. </span>小结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">2.4. </span>小结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>本章讲述了如何使用AIL来进行简单的运算。分别介绍了数字，字符串的表示方式和基本操作。这些操作，将会贯穿整个AIL程序编写过程，十分重要！</p>
 </div>
 </div>
@@ -271,10 +294,10 @@ It is AIL!
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../library/index.html" class="btn btn-neutral float-right" title="AIL 标准库参考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="variable.html" class="btn btn-neutral float-right" title="3. 存储和使用变量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="AIL 教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="setup.html" class="btn btn-neutral float-left" title="1. 搭建AIL运行环境" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

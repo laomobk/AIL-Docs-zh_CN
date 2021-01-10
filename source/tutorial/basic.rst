@@ -90,7 +90,7 @@
     Error: EOL while scanning string literal
 
 
-AIL为字符串只提供了一种运算：加法。字符串加法规定，两者相加，类型只能是数字或字符串。
+AIL为字符串只提供了一种普通运算：加法。字符串加法规定，两者相加，类型只能是数字或字符串。
 
 ::
 
@@ -120,6 +120,31 @@ AIL对多行字符串也提供了支持。如何表示多行字符串呢？答�
     What is that?
     It is AIL!
     */
+
+
+接下来，我们试试别的更高级的操作。AIL为字符串提供了一种额外操作，下标索引。顾名思义，可以像索引C语言中的字符串(const char*)一样，索引AIL字符串， **且不需要担心越界问题** 。
+
+::
+
+    >> 'Nezha'[0]
+    'N'
+    >> 'Nezha'[6]
+    Traceback (most recent call last):
+      File '<shell>', line 2, in <main>
+    IndexError: index out of range (len 5, index 6)
+    >> '哪吒'[1]
+    '吒'
+
+
+若需要获取字符串长度，可以使用内置的 :code:`len` 函数，关于AIL的函数部分，后面的章节会有详细介绍。
+
+::
+
+    >> len('哪吒')
+    < 2 >
+
+
+*AIL默认以UTF-8的编码来读取源码，在进行字符串下标索引或者进行 len(...) 操作时，不需要担心编码和字符宽度的问题。在使用UTF-8的AIL里，一个“字”，就是一个字符（只要能够通过编码）。*
 
 
 小结
